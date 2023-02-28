@@ -1,6 +1,17 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { AnimatePresence } from "framer-motion";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import AuthLayout from "@/layouts/AuthLayout";
+import "@/styles/globals.css";
+
+export default function App({ Component, pageProps, router }: AppProps) {
+  const { pathname } = router;
+
+  return (
+    <AuthLayout>
+      <AnimatePresence key={pathname} initial={false} mode="wait">
+        <Component {...pageProps} />
+      </AnimatePresence>
+    </AuthLayout>
+  );
 }
