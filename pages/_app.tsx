@@ -9,8 +9,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
   return (
     <AuthLayout>
-      <AnimatePresence key={pathname} initial={false} mode="wait">
-        <Component {...pageProps} />
+      <AnimatePresence initial={false} mode="wait">
+        <Component key={pathname} {...pageProps} />
       </AnimatePresence>
     </AuthLayout>
   );
