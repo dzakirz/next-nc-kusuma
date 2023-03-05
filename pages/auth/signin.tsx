@@ -10,7 +10,7 @@ export default function Signin() {
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: -400, opacity: 0 }}
       transition={{ type: "spring", duration: 0.5 }}
-      className="px-3 lg:px-5 py-5 lg:py-10 w-full flex flex-col gap-3 mx-5 lg:w-[400px] backdrop-blur-lg bg-base-100 rounded-xl shadow-xl border-2 border-opacity-50 border-neutral"
+      className="px-3 lg:px-5 py-5 lg:py-10 w-full flex flex-col gap-3 mx-5 lg:w-[400px] backdrop-blur-lg bg-white rounded-xl shadow-xl border-2 border-opacity-50 border-neutral"
     >
       <section className="text-center">
         <h1 className="text-2xl font-bold text-primary lg:text-3xl">
