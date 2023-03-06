@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import {
@@ -9,11 +10,16 @@ import {
 
 export default function Signin() {
   return (
-    <SignCardWrapper>
-      <SigninCardHeader />
-      <SigninCardBody />
-      <SigninCardFooter />
-    </SignCardWrapper>
+    <>
+      <Head>
+        <title>NC Kusuma | Masuk</title>
+      </Head>
+      <SignCardWrapper>
+        <SigninCardHeader />
+        <SigninCardBody />
+        <SigninCardFooter />
+      </SignCardWrapper>
+    </>
   );
 }
 

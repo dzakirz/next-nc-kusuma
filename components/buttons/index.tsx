@@ -1,20 +1,16 @@
 import LeftIconButton from "./variants/left-icon";
 import NormalButton from "./variants/normal";
+import { Styles } from "./constants";
 
 type ButtonType = {
   variant: "normal" | "left-icon";
   icon?: any;
   title: string;
   type?: "button" | "submit";
-  color?:
-    | "primary"
-    | "secondary"
-    | "accent"
-    | "success"
-    | "error"
-    | "warning"
-    | "info";
+  color: any,
 };
+
+export const ButtonColor = Styles;
 
 export default function Button({
   variant,

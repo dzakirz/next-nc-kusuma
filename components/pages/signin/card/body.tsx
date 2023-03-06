@@ -5,6 +5,7 @@ import { Styles } from "../constants";
 import GoogleIcon from "@/public/google.svg";
 import Input from "@/components/inputs";
 import Button from "@/components/buttons";
+import { ButtonColor } from "@/components/buttons";
 
 export default function SigninCardBody() {
   const formik = useFormik({
@@ -56,12 +57,17 @@ export default function SigninCardBody() {
           inputClass={Styles.input}
           labelClass={Styles.label}
         />
-        <Button variant="normal" type="submit" title="Masuk" />
+        <Button
+          variant="normal"
+          type="submit"
+          title="Masuk"
+          color={ButtonColor.normal.primary}
+        />
         <Button
           variant="left-icon"
           title="Masuk Dengan Google"
           icon={GoogleIcon}
-          color="secondary"
+          color={ButtonColor.leftIcon.secondary}
         />
       </form>
     </main>
