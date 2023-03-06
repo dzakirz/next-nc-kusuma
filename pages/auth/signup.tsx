@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/react";
 import { motion as m } from "framer-motion";
 
 export default function Signin() {
@@ -7,7 +9,7 @@ export default function Signin() {
       initial={{ x: 400, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: -400, opacity: 0 }}
-      transition={{ type: "spring", duration: 0.5}}
+      transition={{ type: "spring", duration: 0.5 }}
       className="px-3 lg:px-5 py-5 lg:py-10 w-full flex flex-col gap-3 mx-5 lg:w-[400px] backdrop-blur-lg bg-white rounded-xl shadow-xl border-2 border-opacity-50 border-neutral"
     >
       <section className="text-center">
@@ -80,10 +82,30 @@ export default function Signin() {
       </section>
       <section className="flex flex-col gap-2 text-center">
         <p>Sudah memiliki akun?</p>
-        <Link href="/auth/signin" className="self-center w-16 underline text-secondary">
+        <Link
+          href="/auth/signin"
+          className="self-center w-16 underline text-secondary"
+        >
           Masuk
         </Link>
       </section>
     </m.main>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context);
+
+  if (session) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
