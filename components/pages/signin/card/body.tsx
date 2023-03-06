@@ -19,11 +19,16 @@ export default function SigninCardBody() {
         .email("Format email salah"),
       password: Yup.string()
         .required("Password harus diisi")
-        .min(8, "Password minimal 8 huruf"),
+        .trim("Password tidak boleh menggunakan spasi")
+        .strict(true)
+        .min(8, "Password minimal 8 character")
+        .max(16, "Password maksimal 8 character")
+        .matches(/^\S+$/, "Password tidak boleh menggunakan spasi"),
     }),
     validateOnChange: false,
     validateOnBlur: false,
     onSubmit(values, formikHelpers) {
+      console.log(values.password);
       signIn("credentials", {
         email: values.email,
         password: values.password,
