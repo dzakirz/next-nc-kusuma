@@ -1,8 +1,17 @@
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleClientProvider from "next-auth/providers/google";
+import bcrypt from "bcrypt";
+import prisma from "@/lib/prisma";
 
 const authOptions: AuthOptions = {
+  adapter: PrismaAdapter(prisma),
   providers: [
+    GoogleClientProvider({
+      clientId: String(process.env.GOOGLE_CLIENT_ID),
+      clientSecret: String(process.env.GOOGLE_CLIENT_SECRET),
+    }),
     CredentialsProvider({
       name: "credentials",
       credentials: {
@@ -23,21 +32,30 @@ const authOptions: AuthOptions = {
           password: string;
         };
 
-        const user = {
-          id: "1",
-          email,
-          role: "user",
-        };
+        const user = await prisma.user.findUnique({
+          where: { email },
+        });
 
-        if (email !== "dzaki@gmail.com") {
-          return null;
-        }
-
-        if (password === "12345") {
+        if (!user) {
           return user;
         }
 
-        return null;
+        const match = await bcrypt.compare(password, user?.password!);
+
+        if (!match) {
+          console.log({ match });
+          console.log({ password });
+          console.log({ testpw: user?.password! });
+          console.log("err in bcrypt");
+          return null;
+        }
+
+        return {
+          id: user.id,
+          email: user.email,
+          image: user.image,
+          role: user.role,
+        };
       },
     }),
   ],
@@ -54,6 +72,9 @@ const authOptions: AuthOptions = {
     },
   },
   secret: String(process.env.NEXTAUTH_SECRET),
+  // pages: {
+  //   signIn: "/auth/signin",
+  // },
 };
 
 export default NextAuth(authOptions);

@@ -53,14 +53,15 @@ model User {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
-  name     String?
-  image    String?
-  email    String  @unique
-  password String
-  role     Role    @default(user)
+  name          String?
+  image         String?
+  email         String    @unique
+  emailVerified DateTime?
+  password      String?
+  role          Role      @default(user)
 
-  userProfileId String      @unique @map("user_profile_id")
-  userProfile   UserProfile @relation(fields: [userProfileId], references: [id])
+  userProfileId String?      @unique @map("user_profile_id")
+  userProfile   UserProfile? @relation(fields: [userProfileId], references: [id])
   orders        Order[]
   events        UserEvent[]
   sessions      Session[]
@@ -72,8 +73,10 @@ model User {
 model UserProfile {
   id String @id @default(cuid())
 
-  age    String?
-  gender Gender?
+  firstname String
+  lastname  String
+  age       Int?
+  gender    Gender?
 
   city     String?
   address  String?
@@ -91,7 +94,7 @@ model Product {
 
   name   String
   price  Int
-  desc   String
+  desc   String @db.Text
   weight String
   stock  Int
 

@@ -1,5 +1,6 @@
 import { sidebarContext } from "@/lib/context/sidebar-context";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { useRouter } from "next/router";
 import { motion as m } from "framer-motion";
 import {
   HiX,
@@ -11,7 +12,7 @@ import {
 } from "react-icons/hi";
 
 export default function Sidebar() {
-  const { toggleSidebar } = useContext(sidebarContext);
+  const { toggleSidebar, dashboardRoute, manageUserRoute, manageProductRoute } = useContext(sidebarContext);
 
   return (
     <m.aside
@@ -25,30 +26,46 @@ export default function Sidebar() {
       <div className="self-end mt-5 mr-5 text-3xl opacity-90">
         <HiX onClick={toggleSidebar} />
       </div>
-      <ul className="space-y-12 text-xl font-normal text-center pt-[10px]">
-        <li className="flex items-center justify-center gap-3">
-          <div className="text-secondary">
-            <HiDesktopComputer />
+      <ul className="space-y-9 text-xl font-normal text-center pt-[10px]">
+        <li className="flex items-center justify-center ">
+          <div
+            className={`flex items-center justify-center gap-3 px-4 py-2 rounded-lg ${dashboardRoute}`}
+          >
+            <div className="text-secondary">
+              <HiDesktopComputer />
+            </div>
+            <h1>Dashboard</h1>
           </div>
-          <h1>Dashboard</h1>
         </li>
-        <li className="flex items-center justify-center gap-3">
-          <div className="text-secondary">
-            <HiUserGroup />
+        <li className="flex items-center justify-center ">
+          <div
+            className={`flex items-center justify-center gap-3 px-4 py-2 rounded-lg ${manageUserRoute}`}
+          >
+            <div className="text-secondary">
+              <HiUserGroup />
+            </div>
+            <h1>Kelola User</h1>
           </div>
-          <h1>Kelola User</h1>
         </li>
-        <li className="flex items-center justify-center gap-3">
-          <div className="text-secondary">
-            <HiShoppingBag />
+        <li className="flex items-center justify-center ">
+          <div
+            className={`flex items-center justify-center gap-3 px-4 py-2 rounded-lg ${manageProductRoute}`}
+          >
+            <div className="text-secondary">
+              <HiShoppingBag />
+            </div>
+            <h1>Kelola Produk</h1>
           </div>
-          <h1>Kelola Produk</h1>
         </li>
-        <li className="flex items-center justify-center gap-3">
-          <div className="text-secondary">
-            <HiCurrencyDollar />
+        <li className="flex items-center justify-center ">
+          <div
+            className={`flex items-center justify-center gap-3 px-4 py-2 rounded-lg`}
+          >
+            <div className="text-secondary">
+              <HiCurrencyDollar />
+            </div>
+            <h1>Penjualan</h1>
           </div>
-          <h1>Penjualan</h1>
         </li>
         <li className="flex items-center justify-center gap-3">
           <div className="text-secondary">

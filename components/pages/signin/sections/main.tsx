@@ -64,12 +64,14 @@ export default function SigninMainSection() {
           title="Masuk"
           color={buttonColor.normal.primary}
         />
-        <Button
-          variant="left-icon"
-          title="Masuk Dengan Google"
-          icon={GoogleIcon}
-          color={buttonColor.leftIcon.secondary}
-        />
+        <div onClick={() => signIn("google", { callbackUrl: "/" })}>
+          <Button
+            variant="left-icon"
+            title="Masuk Dengan Google"
+            icon={GoogleIcon}
+            color={buttonColor.leftIcon.secondary}
+          />
+        </div>
       </form>
     </main>
   );
