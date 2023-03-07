@@ -1,9 +1,9 @@
 import type { AppProps } from "next/app";
 import { AnimatePresence } from "framer-motion";
-import { SessionProvider } from "next-auth/react";
 
 import { AdminLayout, AuthLayout, MainLayout } from "@/components/layouts";
 import "@/styles/globals.css";
+import Providers from "@/components/wrapper/providers";
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const { pathname } = router;
@@ -11,7 +11,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   const adminRoute = pathname.startsWith("/admin");
 
   return (
-    <SessionProvider session={pageProps.session}>
+    <Providers session={pageProps.session}>
       {authRoute && (
         <AuthLayout>
           <AnimatePresence initial={false} mode="wait">
@@ -29,6 +29,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
           <Component {...pageProps} />
         </MainLayout>
       )}
-    </SessionProvider>
+    </Providers>
   );
 }
