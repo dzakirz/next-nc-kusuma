@@ -18,7 +18,10 @@ export default function SignupCardBody() {
         .required()
         .trim()
         .strict()
-        .matches(/^(\w+\s)*\w+$/, "Hanya boleh menggunakan satu spasi di antara kata"),
+        .matches(
+          /^(\w+\s)*\w+$/,
+          "Hanya boleh menggunakan satu spasi di antara kata",
+        ),
       email: Yup.string()
         .required("Email harus diisi")
         .email("Format email salah"),
@@ -48,39 +51,38 @@ export default function SignupCardBody() {
         onSubmit={formik.handleSubmit}
         className="flex flex-col gap-3 mx-5 lg:mx-7"
       >
-        {mockSignupInput.map(
-          ({ variant, id, label, placeholder, error: formikError }) => {
-            let error;
+        {mockSignupInput.map(({ variant, id, label, placeholder }) => {
+          let error;
 
-            switch (formikError) {
-              case "name":
-                error = formik.errors.name;
-                break;
-              case "email":
-                error = formik.errors.email;
-                break;
-              case "password":
-                error = formik.errors.password;
-                break;
-              default:
-                error = formik.errors.confpassword;
-                break;
-            }
+          switch (id) {
+            case "name":
+              error = formik.errors.name;
+              break;
+            case "email":
+              error = formik.errors.email;
+              break;
+            case "password":
+              error = formik.errors.password;
+              break;
+            default:
+              error = formik.errors.confpassword;
+              break;
+          }
 
-            return (
-              <Input
-                variant={variant}
-                id={id}
-                label={label}
-                placeholder={placeholder}
-                formik={formik}
-                error={error}
-                labelClass={Styles.label}
-                inputClass={Styles.input}
-              />
-            );
-          },
-        )}
+          return (
+            <Input
+              key={id}
+              variant={variant}
+              id={id}
+              label={label}
+              placeholder={placeholder}
+              formik={formik}
+              error={error}
+              labelClass={Styles.label}
+              inputClass={Styles.input}
+            />
+          );
+        })}
         <Button
           variant="normal"
           title="Mendaftar"

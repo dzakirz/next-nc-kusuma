@@ -1,10 +1,4 @@
-type InputProps = {
-  variant: "text" | "password";
-  id: string;
-  label: string;
-  placeholder: string;
-  error: string
-};
+import { InputProps } from "@/types/props";
 
 export const Styles = {
   label: {
@@ -25,27 +19,23 @@ export const mockSignupInput: InputProps[] = [
     id: "name",
     label: "Nama Lengkap",
     placeholder: "Masukkan Nama Lengkap",
-    error: "name"
   },
   {
     variant: "text",
     id: "email",
     label: "Email",
     placeholder: "Masukkan Email",
-    error: "email"
   },
   {
     variant: "password",
     id: "password",
     label: "Password",
     placeholder: "Masukkan Password",
-    error: "password"
   },
   {
     variant: "password",
     id: "confpassword",
     label: "Password",
     placeholder: "Masukkan Konfirmasi Password",
-    error: "confpassword"
   },
 ];

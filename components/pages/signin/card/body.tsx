@@ -1,7 +1,7 @@
 import { signIn } from "next-auth/react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Styles } from "../constants";
+import { mockSigninInput, Styles } from "../constants";
 import GoogleIcon from "@/public/google.svg";
 import Input from "@/components/inputs";
 import Button from "@/components/buttons";
@@ -42,26 +42,32 @@ export default function SigninCardBody() {
         onSubmit={formik.handleSubmit}
         className="flex flex-col gap-3 mx-5 lg:mx-7"
       >
-        <Input
-          variant="text"
-          id="email"
-          label="Email"
-          placeholder="Masukkan Email"
-          formik={formik}
-          error={formik.errors.email}
-          inputClass={Styles.input}
-          labelClass={Styles.label}
-        />
-        <Input
-          variant="password"
-          id="password"
-          label="Password"
-          placeholder="Masukkan Password"
-          formik={formik}
-          error={formik.errors.password}
-          inputClass={Styles.input}
-          labelClass={Styles.label}
-        />
+        {mockSigninInput.map(({ variant, id, label, placeholder }) => {
+          let error;
+
+          switch (id) {
+            case "email":
+              error = formik.errors.email;
+              break;
+            default:
+              error = formik.errors.password;
+              break;
+          }
+
+          return (
+            <Input
+              key={id}
+              variant={variant}
+              id={id}
+              label={label}
+              placeholder={placeholder}
+              formik={formik}
+              error={error}
+              labelClass={Styles.label}
+              inputClass={Styles.input}
+            />
+          );
+        })}
         <Button
           variant="normal"
           type="submit"
