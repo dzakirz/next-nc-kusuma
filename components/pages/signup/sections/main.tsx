@@ -8,7 +8,7 @@ import {
   signupInputMock,
 } from "../constans";
 
-export default function SignupCardBody() {
+export default function SignupMainSection() {
   const { initialValues, validationSchema } = signupFormikMock;
   const formik = useFormik({
     initialValues,

@@ -1,6 +1,5 @@
 import { signIn } from "next-auth/react";
 import { useFormik } from "formik";
-import * as Yup from "yup";
 import {
   signinStylesMock,
   signinFormikMock,
@@ -11,7 +10,7 @@ import Input from "@/components/inputs";
 import Button from "@/components/buttons";
 import { buttonColor } from "@/components/buttons";
 
-export default function SigninCardBody() {
+export default function SigninMainSection() {
   const { initialValues, validationSchema } = signinFormikMock;
   const formik = useFormik({
     initialValues,

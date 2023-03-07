@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function SignupCardFooter() {
+export default function SignupFooterSection() {
   return (
     <footer className="flex flex-col gap-2 text-center">
       <p>Sudah memiliki akun?</p>

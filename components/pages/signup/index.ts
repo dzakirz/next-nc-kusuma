@@ -1,11 +1,6 @@
-import SignupCardWrapper from "./card/wrapper";
-import SignupCardHeader from "./card/header";
-import SignupCardBody from "./card/body";
-import SignupCardFooter from "./card/footer";
+import SignupWrapper from "./sections/wrapper";
+import SignupHeaderSection from "./sections/header";
+import SignupMainSection from "./sections/main";
+import SignupFooterSection from "./sections/footer";
 
-export {
-  SignupCardWrapper,
-  SignupCardHeader,
-  SignupCardBody,
-  SignupCardFooter,
-};
+export { SignupWrapper, SignupHeaderSection, SignupMainSection, SignupFooterSection }

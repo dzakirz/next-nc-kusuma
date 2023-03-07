@@ -1,4 +1,4 @@
-export default function SignupCardHeader() {
+export default function SigninHeaderSection() {
   return (
     <header className="text-center">
       <h1 className="text-2xl font-bold text-primary lg:text-3xl">

@@ -2,10 +2,10 @@ import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import {
-  SignupCardWrapper,
-  SignupCardHeader,
-  SignupCardBody,
-  SignupCardFooter,
+  SignupWrapper,
+  SignupHeaderSection,
+  SignupMainSection,
+  SignupFooterSection,
 } from "@/components/pages/signup";
 
 export default function Signin() {
@@ -14,11 +14,11 @@ export default function Signin() {
       <Head>
         <title>NC Kusuma | Mendaftar</title>
       </Head>
-      <SignupCardWrapper>
-        <SignupCardHeader />
-        <SignupCardBody />
-        <SignupCardFooter />
-      </SignupCardWrapper>
+      <SignupWrapper>
+        <SignupHeaderSection />
+        <SignupMainSection />
+        <SignupFooterSection />
+      </SignupWrapper>
     </>
   );
 }

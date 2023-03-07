@@ -1,6 +1,6 @@
-import SigninCardHeader from "./card/header";
-import SigninCardBody from "./card/body";
-import SigninCardFooter from "./card/footer";
-import SignCardWrapper from "./card/wrapper";
+import SigninWrapper from "./sections/wrapper";
+import SigninHeaderSection from "./sections/header";
+import SigninMainSection from "./sections/main";
+import SigninFooterSection from "./sections/footer";
 
-export { SignCardWrapper, SigninCardHeader, SigninCardBody, SigninCardFooter };
+export { SigninWrapper, SigninHeaderSection, SigninMainSection, SigninFooterSection }

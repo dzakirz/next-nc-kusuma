@@ -1,7 +1,7 @@
 import { ComponentWithChildren } from "@/types/props";
 import { motion as m } from "framer-motion";
 
-export default function SignupCardWrapper({ children }: ComponentWithChildren) {
+export default function SignupWrapper({ children }: ComponentWithChildren) {
   return (
     <m.main
       initial={{ scale: 0, opacity: 0 }}

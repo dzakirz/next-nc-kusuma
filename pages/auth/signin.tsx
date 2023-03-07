@@ -2,10 +2,10 @@ import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import {
-  SignCardWrapper,
-  SigninCardHeader,
-  SigninCardBody,
-  SigninCardFooter,
+  SigninWrapper,
+  SigninHeaderSection,
+  SigninMainSection,
+  SigninFooterSection,
 } from "@/components/pages/signin";
 
 export default function Signin() {
@@ -14,11 +14,11 @@ export default function Signin() {
       <Head>
         <title>NC Kusuma | Masuk</title>
       </Head>
-      <SignCardWrapper>
-        <SigninCardHeader />
-        <SigninCardBody />
-        <SigninCardFooter />
-      </SignCardWrapper>
+      <SigninWrapper>
+        <SigninHeaderSection />
+        <SigninMainSection />
+        <SigninFooterSection />
+      </SigninWrapper>
     </>
   );
 }
