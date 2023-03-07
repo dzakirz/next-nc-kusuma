@@ -1,6 +1,7 @@
 import { InputProps } from "@/types/props";
+import * as Yup from "yup";
 
-export const Styles = {
+export const signinStylesMock = {
   label: {
     valid: "font-medium",
     error: "font-medium text-error",
@@ -13,7 +14,26 @@ export const Styles = {
   },
 };
 
-export const mockSigninInput: InputProps[] = [
+export const signinFormikMock = {
+  initialValues: {
+    email: "",
+    password: "",
+  },
+  validationSchema: Yup.object({
+    email: Yup.string()
+      .required("Email harus diisi")
+      .email("Format email salah"),
+    password: Yup.string()
+      .required("Password harus diisi")
+      .trim("Password tidak boleh menggunakan spasi")
+      .strict(true)
+      .min(8, "Password minimal 8 character")
+      .max(16, "Password maksimal 8 character")
+      .matches(/^\S+$/, "Password tidak boleh menggunakan spasi"),
+  }),
+};
+
+export const signinInputMock: InputProps[] = [
   {
     variant: "text",
     id: "email",

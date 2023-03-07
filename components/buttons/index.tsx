@@ -1,6 +1,6 @@
 import LeftIconButton from "./variants/left-icon";
 import NormalButton from "./variants/normal";
-import { Styles } from "./constants";
+import { buttonStylesMock } from "./constants";
 
 type ButtonType = {
   variant: "normal" | "left-icon";
@@ -10,7 +10,7 @@ type ButtonType = {
   color: any,
 };
 
-export const ButtonColor = Styles;
+export const buttonColor = buttonStylesMock;
 
 export default function Button({
   variant,

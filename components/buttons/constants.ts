@@ -1,4 +1,4 @@
-export const Styles = {
+export const buttonStylesMock = {
   normal: {
     primary: "py-3 mt-2 text-base font-semibold shadow-lg lg:py-2 lg:text-lg text-opacity-70 rounded-xl bg-primary hover:bg-primary-focus",
     secondary: "py-3 mt-2 text-base font-semibold shadow-lg lg:py-2 lg:text-lg text-opacity-70 rounded-xl bg-secondary hover:bg-secondary-focus",
