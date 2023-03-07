@@ -1,6 +1,10 @@
+import { sidebarContext } from "@/lib/context/sidebar-context";
+import { useContext } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 
 export default function Navbar() {
+  const { toggleSidebar } = useContext(sidebarContext);
+
   return (
     <nav className="bg-white shadow-md w-full h-[60px] fixed top-0 left-0 flex justify-between items-center p-4">
       <div className="flex flex-col justify-center h-full text-center">
@@ -10,7 +14,7 @@ export default function Navbar() {
         <h1 className="font-bold text-[14px]">Kusuma</h1>
       </div>
       <div className="lg:hidden">
-        <HiMenuAlt3 size={25} />
+        <HiMenuAlt3 onClick={toggleSidebar} size={25} />
       </div>
     </nav>
   );
