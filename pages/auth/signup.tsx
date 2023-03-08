@@ -6,10 +6,9 @@ import {
   SignupWrapper,
   SignupHeaderSection,
   SignupMainSection,
-  SignupFooterSection,
 } from "@/components/pages/signup";
 
-export default function Signin() {
+export default function Signin({ user }: any) {
   return (
     <>
       <Head>
@@ -17,8 +16,7 @@ export default function Signin() {
       </Head>
       <SignupWrapper>
         <SignupHeaderSection />
-        <SignupMainSection />
-        <SignupFooterSection />
+        <SignupMainSection user={user} />
       </SignupWrapper>
     </>
   );
@@ -53,6 +51,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   return {
-    props: {},
+    props: {
+      user: session?.user,
+    },
   };
 };

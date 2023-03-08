@@ -1,13 +1,16 @@
 import InputPassword from "./variants/password";
 import InputText from "./variants/text";
+import InputTextDisabled from "./variants/text-disabled";
+import InputTextarea from "./variants/textarea";
 
 type InputType = {
-  variant: "password" | "text";
+  variant: "password" | "text" | "textarea" | "text-disabled";
   label: string;
-  placeholder: string;
+  placeholder?: string;
   id: string;
-  formik: any;
-  error: any;
+  formik?: any;
+  error?: any;
+  value?: string;
   labelClass: { valid: string; error: string };
   inputClass: { valid: string; error: string };
 };
@@ -17,6 +20,7 @@ export default function Input({
   label,
   placeholder,
   id,
+  value,
   formik,
   error,
   labelClass,
@@ -45,6 +49,31 @@ export default function Input({
         error={error}
         labelClass={labelClass}
         inputClass={inputClass}
+      />
+    );
+  }
+  if (variant === "textarea") {
+    return (
+      <InputTextarea
+        label={label}
+        placeholder={placeholder}
+        id={id}
+        formik={formik}
+        error={error}
+        labelClass={labelClass}
+        inputClass={inputClass}
+      />
+    );
+  }
+
+  if (variant === "text-disabled") {
+    return (
+      <InputTextDisabled
+        id={id}
+        label={label}
+        inputClass={inputClass}
+        labelClass={labelClass}
+        value={value}
       />
     );
   }

@@ -1,9 +1,9 @@
 type InputPasswordType = {
   label: string;
-  placeholder: string;
+  placeholder?: string;
   id: string;
-  formik: any;
-  error: any;
+  formik?: any;
+  error?: any;
   labelClass: { valid: string; error: string };
   inputClass: { valid: string; error: string };
 };

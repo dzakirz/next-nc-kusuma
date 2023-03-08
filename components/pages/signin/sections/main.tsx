@@ -52,7 +52,7 @@ export default function SigninMainSection() {
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
-              transition={{ type: "spring", duration: .5 }}
+              transition={{ type: "spring", duration: 0.5 }}
               className="p-2 py-1 font-thin text-center text-white bg-error rounded-xl"
             >
               {message}
@@ -91,13 +91,25 @@ export default function SigninMainSection() {
           title="Masuk"
           color={buttonColor.normal.primary}
         />
-        <div onClick={() => signIn("google", { callbackUrl: "/" })}>
-          <Button
-            variant="left-icon"
-            title="Masuk Dengan Google"
-            icon={GoogleIcon}
-            color={buttonColor.leftIcon.secondary}
-          />
+        <div className="space-y-2 text-center">
+          <h1 className="text-lg font-bold">Mendaftar<span className="font-normal"> atau </span>Masuk</h1>
+          <div onClick={() => signIn("google", { callbackUrl: "/" })}>
+            <Button
+              variant="left-icon"
+              title="Menggunakan Google"
+              icon={GoogleIcon}
+              color={buttonColor.leftIcon.secondary}
+            />
+          </div>
+          <div className="text-sm font-normal">
+            <h1>
+              Anda dapat <span className="font-semibold">Mendaftar</span> atau{" "}
+              <span className="font-semibold">Masuk</span>
+            </h1>
+            <h1>
+              menggunakan akun <span className="font-semibold">Google</span>
+            </h1>
+          </div>
         </div>
       </form>
     </main>

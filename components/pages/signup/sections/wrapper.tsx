@@ -8,7 +8,7 @@ export default function SignupWrapper({ children }: ComponentWithChildren) {
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0, opacity: 0 }}
       transition={{ type: "spring", duration: 0.4 }}
-      className="px-3 lg:px-5 py-5 lg:py-10 w-full flex flex-col gap-3 mx-5 lg:w-[400px] backdrop-blur-lg bg-white rounded-xl shadow-xl border-2 border-opacity-50 border-neutral"
+      className="px-3 lg:px-5 pt-10 pb-12 w-full flex flex-col gap-3 mx-5 lg:w-[500px] backdrop-blur-lg bg-white rounded-xl shadow-xl border-2 border-opacity-50 border-neutral"
     >
       {children}
     </m.main>

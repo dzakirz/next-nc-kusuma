@@ -2,13 +2,13 @@ type InputTextType = {
   label: string;
   placeholder?: string;
   id: string;
-  formik?: any;
-  error?: any;
+  formik: any;
+  error: any;
   labelClass: { valid: string; error: string };
   inputClass: { valid: string; error: string };
 };
 
-export default function InputText({
+export default function InputTextarea({
   label,
   placeholder,
   id,
@@ -25,11 +25,10 @@ export default function InputText({
       >
         {error ? error : label}
       </label>
-      <input
-        type="text"
+      <textarea
         {...formik.getFieldProps(id)}
         placeholder={placeholder}
-        className={error ? inputClass.error : inputClass.valid}
+        className={`h-[100px] ${error ? inputClass.error : inputClass.valid}`}
       />
     </div>
   );

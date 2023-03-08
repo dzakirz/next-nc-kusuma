@@ -16,23 +16,32 @@ export const signupStylesMock = {
 
 export const signupFormikMock = {
   initialValues: {
-    name: "",
-    email: "",
+    address: "",
+    city: "",
+    postcode: "",
     password: "",
     confpassword: "",
   },
   validationSchema: Yup.object({
-    name: Yup.string()
-      .required("Nama Lengkap tidak boleh kosong")
-      .trim("Nama Lengkap tidak boleh menggunakan spasi di awal")
+    address: Yup.string()
+      .required("Alamat Lengkap harus diisi")
+      .trim("Alamat Lengkap tidak boleh menggunakan spasi di awal")
       .strict(true)
       .matches(
         /^(\w+\s)*\w+$/,
-        "Hanya boleh menggunakan satu spasi di antara kata",
+        "Alamat hanya boleh menggunakan satu spasi di antara kata",
       ),
-    email: Yup.string()
-      .required("Email harus diisi")
-      .email("Format email salah"),
+    city: Yup.string()
+      .required("Nama kota harus diisi")
+      .trim("Nama kota tidak boleh menggunakan spasi di awal")
+      .strict(true)
+      .matches(/^\S+$/, "Nama kota tidak boleh menggunakan spasi"),
+    postcode: Yup.string()
+      .required("Kodepos harus diisi")
+      .trim("Kodepos tidak boleh menggunakan spasi di awal")
+      .strict(true)
+      .min(5, "Kodepos minimal 5 angka")
+      .matches(/^\S+$/, "Kodepos tidak boleh menggunakan spasi"),
     password: Yup.string()
       .required("Password harus diisi")
       .trim("Password tidak boleh menggunakan spasi")
@@ -47,18 +56,6 @@ export const signupFormikMock = {
 };
 
 export const signupInputMock: InputProps[] = [
-  {
-    variant: "text",
-    id: "name",
-    label: "Nama Lengkap",
-    placeholder: "Masukkan Nama Lengkap",
-  },
-  {
-    variant: "text",
-    id: "email",
-    label: "Email",
-    placeholder: "Masukkan Email",
-  },
   {
     variant: "password",
     id: "password",

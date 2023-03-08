@@ -5,7 +5,6 @@ import {
   SigninWrapper,
   SigninHeaderSection,
   SigninMainSection,
-  SigninFooterSection,
 } from "@/components/pages/signin";
 
 export default function Signin() {
@@ -17,7 +16,6 @@ export default function Signin() {
       <SigninWrapper>
         <SigninHeaderSection />
         <SigninMainSection />
-        <SigninFooterSection />
       </SigninWrapper>
     </>
   );
