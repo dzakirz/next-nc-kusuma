@@ -34,6 +34,7 @@ const authOptions: AuthOptions = {
 
         const user = await prisma.user.findUnique({
           where: { email },
+          include: { userProfile: { select: { firstname: true } } },
         });
 
         if (!user) {
@@ -52,6 +53,7 @@ const authOptions: AuthOptions = {
 
         return {
           id: user.id,
+          name: user.userProfile?.firstname,
           email: user.email,
           image: user.image,
           role: user.role,
@@ -72,9 +74,9 @@ const authOptions: AuthOptions = {
     },
   },
   secret: String(process.env.NEXTAUTH_SECRET),
-  // pages: {
-  //   signIn: "/auth/signin",
-  // },
+  pages: {
+    signIn: "/auth/signin",
+  },
 };
 
 export default NextAuth(authOptions);

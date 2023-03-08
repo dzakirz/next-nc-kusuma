@@ -46,9 +46,10 @@ CREATE TABLE `user` (
     `name` VARCHAR(191) NULL,
     `image` VARCHAR(191) NULL,
     `email` VARCHAR(191) NOT NULL,
-    `password` VARCHAR(191) NOT NULL,
+    `emailVerified` DATETIME(3) NULL,
+    `password` VARCHAR(191) NULL,
     `role` ENUM('user', 'admin') NOT NULL DEFAULT 'user',
-    `user_profile_id` VARCHAR(191) NOT NULL,
+    `user_profile_id` VARCHAR(191) NULL,
 
     UNIQUE INDEX `user_email_key`(`email`),
     UNIQUE INDEX `user_user_profile_id_key`(`user_profile_id`),
@@ -159,7 +160,7 @@ ALTER TABLE `account` ADD CONSTRAINT `account_user_id_fkey` FOREIGN KEY (`user_i
 ALTER TABLE `session` ADD CONSTRAINT `session_user_id_fkey` FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `user` ADD CONSTRAINT `user_user_profile_id_fkey` FOREIGN KEY (`user_profile_id`) REFERENCES `user_profile`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `user` ADD CONSTRAINT `user_user_profile_id_fkey` FOREIGN KEY (`user_profile_id`) REFERENCES `user_profile`(`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `product` ADD CONSTRAINT `product_category_id_fkey` FOREIGN KEY (`category_id`) REFERENCES `category`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
