@@ -5,7 +5,7 @@ export default function SignupHeaderSection() {
         Nutrition Club
       </h1>
       <h1 className="text-3xl font-extrabold text-p lg:text-4xl">Kusuma</h1>
-      <h2 className="pt-6 pb-5 text-lg font-semibold">Lengkapi data sebelum masuk</h2>
+      <h2 className="pt-6 pb-5 text-base font-semibold lg:text-lg">Lengkapi data sebelum masuk</h2>
     </header>
   );
 }

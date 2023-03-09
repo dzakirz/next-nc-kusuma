@@ -41,7 +41,7 @@ export default function SigninMainSection() {
   });
 
   return (
-    <main className="overflow-hidden">
+    <main className="pb-5 overflow-hidden">
       <form
         onSubmit={formik.handleSubmit}
         className="flex flex-col gap-3 mx-5 lg:mx-7"
@@ -101,13 +101,13 @@ export default function SigninMainSection() {
               color={buttonColor.leftIcon.secondary}
             />
           </div>
-          <div className="text-sm font-normal">
+          <div className="text-xs font-light lg:text-sm">
             <h1>
-              Anda dapat <span className="font-semibold">Mendaftar</span> atau{" "}
-              <span className="font-semibold">Masuk</span>
+              Anda dapat <span className="text-sm font-medium lg:text-base">Mendaftar</span> atau{" "}
+              <span className="text-sm font-medium lg:text-base">Masuk</span>
             </h1>
             <h1>
-              menggunakan akun <span className="font-semibold">Google</span>
+              menggunakan akun <span className="text-sm font-medium lg:text-base">Google</span>
             </h1>
           </div>
         </div>

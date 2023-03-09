@@ -3,14 +3,14 @@ import * as Yup from "yup";
 
 export const signinStylesMock = {
   label: {
-    valid: "font-medium",
-    error: "font-medium text-error",
+    valid: "font-medium text-sm lg:text-base",
+    error: "font-medium text-sm lg:text-base text-error",
   },
   input: {
     valid:
-      "w-full px-3 py-2 border-2 bg-base-100 rounded-xl focus:outline-none border-secondary focus:border-primary focus:ring-1 focus:ring-primary",
+      "w-full px-2 py-2 text-sm lg:text-base lg:px-3 border-2 bg-base-100 rounded-xl focus:outline-none border-secondary focus:border-primary focus:ring-1 focus:ring-primary",
     error:
-      "w-full px-3 py-2 border-2 bg-base-100 rounded-xl focus:outline-none border-error focus:border-error focus:ring-1 focus:ring-error",
+      "w-full px-2 py-2 text-sm lg:text-base lg:px-3 border-2 bg-base-100 rounded-xl focus:outline-none border-error focus:border-error focus:ring-1 focus:ring-error",
   },
 };
 

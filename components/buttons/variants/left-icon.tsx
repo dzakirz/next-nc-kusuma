@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 type LeftIconButtonType = {
   title: string;
@@ -15,7 +15,14 @@ export default function LeftIconButton({
 
   return (
     <div className={color}>
-      <Image src={icon} width={25} height={25} alt="google-icon" />
+      <div className="w-[25px] h-[25px]">
+        <Image
+          src={icon}
+          width={25}
+          height={25}
+          alt="google-icon"
+        />
+      </div>
       <p>{title}</p>
     </div>
   );

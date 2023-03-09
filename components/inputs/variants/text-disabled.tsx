@@ -18,7 +18,7 @@ export default function InputTextDisabled({
       <label htmlFor={id} className={labelClass.valid}>
         {label}
       </label>
-      <input type="text" disabled value={value} className={inputClass.valid} />
+      <input type="text" disabled value={value} className={`${inputClass.valid} font-semibold`} />
     </div>
   );
 }
