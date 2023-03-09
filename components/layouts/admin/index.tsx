@@ -8,8 +8,6 @@ import { AnimatePresence, motion as m } from "framer-motion";
 export default function AdminLayout({ children }: ComponentWithChildren) {
   const { sidebarActive } = useContext(sidebarContext);
 
-  console.log(sidebarActive);
-
   return (
     <div className="relative min-h-screen overflow-hidden">
       <Navbar />

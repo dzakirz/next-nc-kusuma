@@ -10,9 +10,11 @@ import {
   HiCurrencyDollar,
   HiLogout,
 } from "react-icons/hi";
+import Link from "next/link";
 
 export default function Sidebar() {
-  const { toggleSidebar, dashboardRoute, manageUserRoute, manageProductRoute } = useContext(sidebarContext);
+  const { toggleSidebar, dashboardRoute, manageUserRoute, manageProductRoute } =
+    useContext(sidebarContext);
 
   return (
     <m.aside
@@ -28,44 +30,52 @@ export default function Sidebar() {
       </div>
       <ul className="space-y-9 text-xl font-normal text-center pt-[10px]">
         <li className="flex items-center justify-center ">
-          <div
-            className={`flex items-center justify-center gap-3 px-4 py-2 rounded-lg ${dashboardRoute}`}
-          >
-            <div className="text-secondary">
-              <HiDesktopComputer />
+          <Link href="/admin">
+            <div
+              className={`flex items-center justify-center gap-3 px-4 py-2 rounded-lg hover:bg-base-100 ${dashboardRoute}`}
+            >
+              <div className="text-secondary">
+                <HiDesktopComputer />
+              </div>
+              <h1>Dashboard</h1>
             </div>
-            <h1>Dashboard</h1>
-          </div>
+          </Link>
         </li>
         <li className="flex items-center justify-center ">
-          <div
-            className={`flex items-center justify-center gap-3 px-4 py-2 rounded-lg ${manageUserRoute}`}
-          >
-            <div className="text-secondary">
-              <HiUserGroup />
+          <Link href="/admin/manage-users">
+            <div
+              className={`flex items-center justify-center gap-3 px-4 py-2 hover:bg-base-100 rounded-lg ${manageUserRoute}`}
+            >
+              <div className="text-secondary">
+                <HiUserGroup />
+              </div>
+              <h1>Kelola User</h1>
             </div>
-            <h1>Kelola User</h1>
-          </div>
+          </Link>
         </li>
         <li className="flex items-center justify-center ">
-          <div
-            className={`flex items-center justify-center gap-3 px-4 py-2 rounded-lg ${manageProductRoute}`}
-          >
-            <div className="text-secondary">
-              <HiShoppingBag />
+          <Link href="/admin/manage-products">
+            <div
+              className={`flex items-center justify-center gap-3 px-4 py-2 hover:bg-base-100 rounded-lg ${manageProductRoute}`}
+            >
+              <div className="text-secondary">
+                <HiShoppingBag />
+              </div>
+              <h1>Kelola Produk</h1>
             </div>
-            <h1>Kelola Produk</h1>
-          </div>
+          </Link>
         </li>
         <li className="flex items-center justify-center ">
-          <div
-            className={`flex items-center justify-center gap-3 px-4 py-2 rounded-lg`}
-          >
-            <div className="text-secondary">
-              <HiCurrencyDollar />
+          <Link href="/admin">
+            <div
+              className={`flex items-center justify-center gap-3 px-4 py-2 hover:bg-base-100 rounded-lg`}
+            >
+              <div className="text-secondary">
+                <HiCurrencyDollar />
+              </div>
+              <h1>Penjualan</h1>
             </div>
-            <h1>Penjualan</h1>
-          </div>
+          </Link>
         </li>
         <li className="flex items-center justify-center gap-3">
           <div className="text-secondary">
