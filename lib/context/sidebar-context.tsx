@@ -16,9 +16,9 @@ export const sidebarContext = createContext({} as SidebarContextInterface);
 export default function SidebarProvider({ children }: ComponentWithChildren) {
   const router = useRouter();
   const [sidebarActive, setSidebarActive] = useState<boolean>(false);
-  const manageUserRoute = router.pathname === "/admin/manage-users" ? "bg-base-100" : "";
-  const manageProductRoute = router.pathname === "/admin/manage-products" ? "bg-base-100" : "";
-  const dashboardRoute = router.pathname === "/admin" ? "bg-base-100" : "";
+  const manageUserRoute = router.pathname === "/admin/manage-users" ? "bg-base-200" : "";
+  const manageProductRoute = router.pathname === "/admin/manage-products" ? "bg-base-200" : "";
+  const dashboardRoute = router.pathname === "/admin" ? "bg-base-200" : "";
 
   const toggleSidebar = () => {
     setSidebarActive(!sidebarActive);

@@ -32,7 +32,7 @@ export default function Sidebar() {
         <li className="flex items-center justify-center ">
           <Link href="/admin">
             <div
-              className={`flex items-center justify-center gap-3 px-4 py-2 rounded-lg hover:bg-base-100 ${dashboardRoute}`}
+              className={`flex items-center justify-center gap-3 px-4 py-2 rounded-lg hover:bg-base-200 ${dashboardRoute}`}
             >
               <div className="text-secondary">
                 <HiDesktopComputer />
@@ -44,7 +44,7 @@ export default function Sidebar() {
         <li className="flex items-center justify-center ">
           <Link href="/admin/manage-users">
             <div
-              className={`flex items-center justify-center gap-3 px-4 py-2 hover:bg-base-100 rounded-lg ${manageUserRoute}`}
+              className={`flex items-center justify-center gap-3 px-4 py-2 hover:bg-base-200 rounded-lg ${manageUserRoute}`}
             >
               <div className="text-secondary">
                 <HiUserGroup />
@@ -56,7 +56,7 @@ export default function Sidebar() {
         <li className="flex items-center justify-center ">
           <Link href="/admin/manage-products">
             <div
-              className={`flex items-center justify-center gap-3 px-4 py-2 hover:bg-base-100 rounded-lg ${manageProductRoute}`}
+              className={`flex items-center justify-center gap-3 px-4 py-2 hover:bg-base-200 rounded-lg ${manageProductRoute}`}
             >
               <div className="text-secondary">
                 <HiShoppingBag />
@@ -68,7 +68,7 @@ export default function Sidebar() {
         <li className="flex items-center justify-center ">
           <Link href="/admin">
             <div
-              className={`flex items-center justify-center gap-3 px-4 py-2 hover:bg-base-100 rounded-lg`}
+              className={`flex items-center justify-center gap-3 px-4 py-2 hover:bg-base-200 rounded-lg`}
             >
               <div className="text-secondary">
                 <HiCurrencyDollar />
