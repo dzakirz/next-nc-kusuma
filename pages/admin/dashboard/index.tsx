@@ -45,7 +45,7 @@ export default function AdminDashboardPage() {
           <div className='flex items-center justify-between'>
             <h1 className='mb-4 text-xl font-semibold'>Pengumuman</h1>
             <Link
-              href='/admin/create-announcment'
+              href='/admin/create/announcment'
               className='-mt-4 btn btn-primary btn-sm'
             >
               buat
@@ -83,7 +83,7 @@ export default function AdminDashboardPage() {
           <div className='flex items-center justify-between'>
             <h1 className='mb-4 text-xl font-semibold'>Acara</h1>
             <Link
-              href='/admin/create-event'
+              href='/admin/create/event'
               className='-mt-4 btn btn-primary btn-sm'
             >
               buat
