@@ -1,11 +1,11 @@
-import { AuthLayout } from '@/layouts'
-import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import '@/styles/globals.css'
+import { AuthLayout } from '@/components/layouts'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <AuthLayout>
+    // <AuthLayout>
       <Component {...pageProps} />
-    </AuthLayout>
+    // </AuthLayout>
   )
 }

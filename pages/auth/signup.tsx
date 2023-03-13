@@ -1,4 +1,4 @@
-export default function Signup() {
+export default function SignupPage() {
   return (
     <div className='w-10/12 px-4 py-10 space-y-2 bg-white rounded-lg shadow-lg'>
       <header className='px-6 mb-6 font-extrabold text-center'>
@@ -25,7 +25,7 @@ export default function Signup() {
           </div>
         </div>
         <form className='space-y-4'>
-          <div className='space-y-1'>
+          <div className='flex flex-col space-y-1'>
             <label
               htmlFor='name'
               className='font-medium'
@@ -38,10 +38,10 @@ export default function Signup() {
               id='name'
               name='name'
               value='Dzaki Rozaan'
-              className='w-full max-w-xs input input-borderedi input-secondary input-md'
+              className='w-full max-w-full input input-borderedi input-secondary input-md'
             />
           </div>
-          <div className='space-y-1'>
+          <div className='flex flex-col space-y-1'>
             <label
               htmlFor='email'
               className='font-medium'
@@ -54,10 +54,10 @@ export default function Signup() {
               id='email'
               name='email'
               value='Dzaki@gmail.com'
-              className='w-full max-w-xs input input-borderedi input-secondary input-md'
+              className='w-full max-w-full input input-borderedi input-secondary input-md'
             />
           </div>
-          <div className='space-y-1'>
+          <div className='flex flex-col space-y-1'>
             <label
               htmlFor='password'
               className='font-medium'
@@ -69,8 +69,8 @@ export default function Signup() {
               placeholder='Masukkan Alamat'
             />
           </div>
-          <div className='flex gap-4'>
-            <div className='space-y-1'>
+          <div className='flex w-full gap-4'>
+            <div className='flex flex-col flex-1 space-y-1'>
               <label
                 htmlFor='city'
                 className='font-medium'
@@ -82,10 +82,10 @@ export default function Signup() {
                 id='city'
                 name='city'
                 placeholder='Kota'
-                className='w-full max-w-xs input input-borderedi input-secondary input-md'
+                className='w-full max-w-full input input-borderedi input-secondary input-md'
               />
             </div>
-            <div className='space-y-1'>
+            <div className='flex flex-col flex-1 space-y-1'>
               <label
                 htmlFor='postcode'
                 className='font-medium'
@@ -97,11 +97,11 @@ export default function Signup() {
                 id='postcode'
                 name='postcode'
                 placeholder='Kodepos'
-                className='w-full max-w-xs input input-borderedi input-secondary input-md'
+                className='w-full max-w-full input input-borderedi input-secondary input-md'
               />
             </div>
           </div>
-          <div className='space-y-1'>
+          <div className='flex flex-col space-y-1'>
             <label
               htmlFor='password'
               className='font-medium'
@@ -113,11 +113,11 @@ export default function Signup() {
               id='password'
               name='password'
               placeholder='Masukkan Password'
-              className='w-full max-w-xs input input-borderedi input-secondary input-md'
+              className='w-full max-w-full input input-borderedi input-secondary input-md'
             />
           </div>
 
-          <div className='space-y-1'>
+          <div className='flex flex-col space-y-1'>
             <label
               htmlFor='confpassword'
               className='font-medium'
@@ -129,7 +129,7 @@ export default function Signup() {
               id='confpassword'
               name='confpassword'
               placeholder='Masukkan Konfirmasi Password'
-              className='w-full max-w-xs input input-borderedi input-secondary input-md'
+              className='w-full max-w-full input input-borderedi input-secondary input-md'
             />
           </div>
           <button
@@ -140,7 +140,7 @@ export default function Signup() {
           </button>
         </form>
       </main>
-      <footer className='text-base text-center underline text-accent'>
+      <footer className='text-center link link-secondary'>
         <p>Kembali</p>
       </footer>
     </div>

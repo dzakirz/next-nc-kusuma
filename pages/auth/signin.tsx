@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function Signin() {
+export default function SigninPage() {
   return (
     <div className='w-10/12 px-4 py-10 space-y-2 bg-white rounded-lg shadow-lg'>
       <header className='px-6 mb-6 font-extrabold text-center'>
@@ -27,7 +27,7 @@ export default function Signin() {
           </div>
         </div>
         <form className='space-y-4'>
-          <div className='space-y-1'>
+          <div className='flex flex-col space-y-1'>
             <label
               htmlFor='email'
               className='font-medium'
@@ -39,10 +39,10 @@ export default function Signin() {
               id='email'
               name='email'
               placeholder='Masukkan Email'
-              className='w-full max-w-xs input input-borderedi input-secondary input-md'
+              className='w-full max-w-full input input-bordered input-secondary input-md'
             />
           </div>
-          <div className='space-y-1'>
+          <div className='flex flex-col space-y-1'>
             <label
               htmlFor='password'
               className='font-medium'
@@ -54,7 +54,7 @@ export default function Signin() {
               id='password'
               name='password'
               placeholder='Masukkan Password'
-              className='w-full max-w-xs input input-borderedi input-secondary input-md'
+              className='w-full max-w-full input input-bordered input-secondary input-md'
             />
           </div>
           <div className='flex flex-col w-full border-opacity-50'>
